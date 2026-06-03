@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoGlow | Where Tradition Meets Innovation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+:root{
+--gold:#f7c86d;
+--gold2:#ffd98a;
+--orange:#ff9d00;
+--bg:#080503;
+--glass:rgba(255,255,255,.08);
+}
+
+body{
+font-family:Poppins,sans-serif;
+background:var(--bg);
+color:white;
+overflow-x:hidden;
+}
+
+/* Stars */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+pointer-events:none;
+z-index:-1;
+}
+
+.star{
+position:absolute;
+width:3px;
+height:3px;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+50%{
+opacity:.2;
+}
+}
+
+/* Navbar */
+
+nav{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:90%;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(15px);
+background:rgba(255,255,255,.05);
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+z-index:999;
+}
+
+.logo{
+font-family:Cinzel;
+font-size:30px;
+font-weight:700;
+color:var(--gold);
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+/* Hero */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+url('diya1.jpg');
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.hero h1{
+font-family:Cinzel;
+font-size:75px;
+color:var(--gold);
+text-shadow:0 0 25px rgba(255,190,0,.5);
+}
+
+.hero p{
+font-size:22px;
+line-height:1.8;
+margin-top:20px;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+background:linear-gradient(45deg,var(--gold),var(--orange));
+border-radius:50px;
+color:black;
+font-weight:700;
+text-decoration:none;
+transition:.4s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+/* Sections */
+
+section{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+font-family:Cinzel;
+font-size:45px;
+color:var(--gold);
+margin-bottom:50px;
+}
+
+/* Gallery */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.gallery img{
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:25px;
+cursor:pointer;
+transition:.5s;
+box-shadow:0 0 20px rgba(255,180,0,.15);
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* Lightbox */
+
+#lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.95);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:20px;
+}
+
+/* Product Cards */
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+padding:30px;
+border-radius:25px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(255,190,0,.25);
+}
+
+.card h3{
+color:var(--gold);
+font-size:28px;
+}
+
+.price{
+font-size:42px;
+font-weight:700;
+margin:15px 0;
+}
+
+.card ul{
+line-height:2;
+}
+
+/* Countdown */
+
+.countdown{
+font-size:60px;
+text-align:center;
+font-weight:700;
+color:var(--gold);
+}
+
+/* Reviews */
+
+.review-wrap{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.review{
+padding:25px;
+border-radius:20px;
+background:rgba(255,255,255,.05);
+}
+
+/* Contact */
+
+.contact{
+text-align:center;
+}
+
+.contact p{
+font-size:18px;
+margin:10px 0;
+}
+
+/* Footer */
+
+footer{
+padding:40px;
+text-align:center;
+background:black;
+margin-top:50px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:48px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.section-title{
+font-size:34px;
+}
+
+.countdown{
+font-size:38px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<nav>
+<div class="logo">EcoGlow</div>
+
+<div>
+<a href="#gallery">Gallery</a>
+<a href="#products">Products</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>EcoGlow</h1>
+
+<p>
+Where Tradition Meets Innovation.
+<br><br>
+Experience the warmth of a traditional diya
+without oil, smoke, or daily maintenance.
+</p>
+
+<a class="btn"
+href="https://wa.me/918421217866?text=Hello EcoGlow, I want to place an order.">
+Order Now
+</a>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Diwali Countdown</h2>
+
+<div class="countdown" id="countdown"></div>
+
+</section>
+
+<section id="gallery">
+
+<h2 class="section-title">Product Gallery</h2>
+
+<div class="gallery">
+
+<img src="diya1.jpg" onclick="openImage(this.src)">
+<img src="diya2.jpg" onclick="openImage(this.src)">
+<img src="diya3.jpg" onclick="openImage(this.src)">
+
+</div>
+
+</section>
+
+<section id="products">
+
+<h2 class="section-title">Our Collection</h2>
+
+<div class="products">
+
+<div class="card">
+
+<h3>EcoGlow Lite</h3>
+
+<div class="price">₹149</div>
+
+<ul>
+<li>USB-C Charging</li>
+<li>Warm Golden Glow</li>
+<li>Reusable</li>
+<li>No Oil Required</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>EcoGlow Solar</h3>
+
+<div class="price">₹199</div>
+
+<ul>
+<li>Solar Powered</li>
+<li>USB-C Backup Charging</li>
+<li>Eco Friendly</li>
+<li>Outdoor Ready</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="reviews">
+
+<h2 class="section-title">Customer Reviews</h2>
+
+<div class="review-wrap">
+
+<div class="review">
+★★★★★<br><br>
+Beautiful product and perfect for daily pooja.
+<br><br>
+— Priya S.
+</div>
+
+<div class="review">
+★★★★★<br><br>
+Looks premium and the solar charging is amazing.
+<br><br>
+— Rajesh K.
+</div>
+
+<div class="review">
+★★★★★<br><br>
+Everyone in my society asked where I bought it.
+<br><br>
+— Meera P.
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+
+<h2 class="section-title">Contact Us</h2>
+
+<p>📱 WhatsApp: 8421217866</p>
+<p>☎️ Phone: 7066122011</p>
+<p>✉️ aarush.6122011@gmail.com</p>
+
+<a class="btn"
+href="https://wa.me/918421217866?text=Hello EcoGlow, I want to order your diya.">
+Place Order
+</a>
+
+</section>
+
+<footer>
+
+<h3>EcoGlow</h3>
+<p>Where Tradition Meets Innovation.</p>
+
+</footer>
+
+<div id="lightbox" onclick="closeImage()">
+<img id="lightbox-img">
+</div>
+
+<script>
+
+/* Stars */
+
+for(let i=0;i<200;i++){
+
+let star=document.createElement('div');
+
+star.className='star';
+
+star.style.left=Math.random()*100+'%';
+star.style.top=Math.random()*100+'%';
+
+star.style.animationDelay=Math.random()*3+'s';
+
+document.getElementById('stars').appendChild(star);
+
+}
+
+/* Gallery Zoom */
+
+function openImage(src){
+
+document.getElementById('lightbox').style.display='flex';
+document.getElementById('lightbox-img').src=src;
+
+}
+
+function closeImage(){
+
+document.getElementById('lightbox').style.display='none';
+
+}
+
+/* Countdown */
+
+const target=new Date("October 17, 2026 00:00:00").getTime();
+
+setInterval(()=>{
+
+const now=new Date().getTime();
+
+const distance=target-now;
+
+const days=Math.floor(distance/(1000*60*60*24));
+
+document.getElementById("countdown").innerHTML=
+days + " Days Remaining";
+
+},1000);
+
+</script>
+
+</body>
+</html>
